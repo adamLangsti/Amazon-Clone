@@ -2,11 +2,14 @@ import React from 'react';
 import logo from '../images/amazon-logo-white.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='header'>
-            <img src={logo} alt='amazon' />
+            <Link to='/'>
+                <img src={logo} alt='amazon' />
+            </Link>
             <div className='header-search'>
                 <input className='header-search-input' />
                 <SearchIcon className='header-search-icon' />
