@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Product = ({ title, image, price, rating }) => {
+const Product = ({ id, title, image, price, rating }) => {
     return (
         <div className='product'>
             <div className='product-info'>
@@ -12,8 +12,8 @@ const Product = ({ title, image, price, rating }) => {
                 <div className='product-rating'>
                     {Array(rating)
                         .fill()
-                        .map((_, index) => (
-                            <p>⭐️</p>
+                        .map((star, index) => (
+                            <p key={index}>⭐️</p>
                         ))}
                 </div>
                 <img src={image} alt='lean' />
