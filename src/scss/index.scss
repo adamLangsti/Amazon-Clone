@@ -1,5 +1,11 @@
 @import 'header';
 @import 'home';
+@import 'product';
 * {
   margin: 0;
+}
+body {
+  ::selection {
+    background-color: #292929;
+  }
 }
