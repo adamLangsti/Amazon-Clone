@@ -17,11 +17,17 @@ const Header = () => {
                 <input className='header-search-input' />
                 <SearchIcon className='header-search-icon' />
             </div>
+
             <div className='header-nav'>
-                <div className='header-option'>
-                    <span className='header-optionLineOne'>Hello Guest</span>
-                    <span className='header-optionLineTwo'>Sign In</span>
-                </div>
+                <Link to='/login'>
+                    <div className='header-option'>
+                        <span className='header-optionLineOne'>
+                            Hello Guest
+                        </span>
+                        <span className='header-optionLineTwo'>Sign In</span>
+                    </div>
+                </Link>
+
                 <div className='header-option'>
                     <span className='header-optionLineThree'>Returns</span>
                     <span className='header-optionLineFour'>& Orders</span>
@@ -30,6 +36,7 @@ const Header = () => {
                     <span className='header-optionLineFive'>Your</span>
                     <span className='header-optionLineSix'>Prime</span>
                 </div>
+
                 <Link to='/checkout'>
                     <div className='header-optionBasket'>
                         <ShoppingBasketIcon />
