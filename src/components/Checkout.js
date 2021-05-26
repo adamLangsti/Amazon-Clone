@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/amazon-checkout.jpg';
+import SubTotal from './SubTotal';
 
 const Checkout = () => {
     return (
@@ -11,7 +12,7 @@ const Checkout = () => {
                 </div>
             </div>
             <div className='checkout-right'>
-                <h2>The subtotal will go here</h2>
+                <SubTotal />
             </div>
         </div>
     );

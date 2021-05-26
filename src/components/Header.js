@@ -3,8 +3,11 @@ import logo from '../images/amazon-logo-white.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
+import { useStateValue } from './context/StateProvider';
 
 const Header = () => {
+    const [{ basket }, dispatch] = useStateValue();
+
     return (
         <div className='header'>
             <Link to='/'>
@@ -30,7 +33,9 @@ const Header = () => {
                 <Link to='/checkout'>
                     <div className='header-optionBasket'>
                         <ShoppingBasketIcon />
-                        <span className='header-basketCount'>0</span>
+                        <span className='header-basketCount'>
+                            {basket.length}
+                        </span>
                     </div>
                 </Link>
             </div>
