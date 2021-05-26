@@ -5,13 +5,14 @@ import { useStateValue } from './context/StateProvider';
 import SubTotal from './SubTotal';
 
 const Checkout = () => {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
     return (
         <div className='checkout'>
             <div className='checkout-left'>
                 <img src={logo} alt='checkout' className='checkout-ad' />
 
                 <div>
+                    <h3 className="checkout-user">Hello, {user?.email}</h3>
                     <h2 className='checkout-title'>Your Shopping Basket</h2>
                 </div>
                 <div className='checkout-right'>

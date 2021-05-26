@@ -4,8 +4,30 @@ import './css/index.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Checkout from './components/Checkout';
 import Login from './components/Login';
+import { useEffect } from 'react';
+import { auth } from './firebase';
+import { useStateValue } from './components/context/StateProvider';
 
 const App = () => {
+    const [{ basket }, dispatch] = useStateValue();
+
+    useEffect(() => {
+        auth.onAuthStateChanged((authUser) => {
+            console.log('The user is: ', authUser);
+            if (authUser) {
+                dispatch({
+                    type: 'SET_USER',
+                    user: authUser,
+                });
+            } else {
+                dispatch({
+                    type: 'SET_USER',
+                    user: null,
+                });
+            }
+        });
+    }, []);
+
     return (
         <Router>
             <Route path='/login' component={Login} />
