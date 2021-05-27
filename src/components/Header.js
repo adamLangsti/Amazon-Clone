@@ -31,7 +31,7 @@ const Header = () => {
                         className='header-option'
                         onClick={handleAuthentication}>
                         <span className='header-optionLineOne'>
-                            Hello {user?.email}
+                            Hello {!user ? 'Guest' : user.email}
                         </span>
                         <span className='header-optionLineTwo'>
                             {user ? 'Sign Out' : 'Sign In'}
