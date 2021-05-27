@@ -12,18 +12,20 @@ const Checkout = () => {
                 <img src={logo} alt='checkout' className='checkout-ad' />
 
                 <div>
-                    <h3 className="checkout-user">Hello, {user?.email}</h3>
+                    <h3 className='checkout-user'>Hello, {user?.email}</h3>
                     <h2 className='checkout-title'>Your Shopping Basket</h2>
                 </div>
                 <div className='checkout-right'>
                     {basket.map((item) => (
-                        <CheckoutProduct
-                            id={item.id}
-                            title={item.title}
-                            image={item.image}
-                            price={item.price}
-                            rating={item.rating}
-                        />
+                        <div key={item.id}>
+                            <CheckoutProduct
+                                id={item.id}
+                                title={item.title}
+                                image={item.image}
+                                price={item.price}
+                                rating={item.rating}
+                            />
+                        </div>
                     ))}
                 </div>
             </div>

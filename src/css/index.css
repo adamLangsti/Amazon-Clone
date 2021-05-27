@@ -346,6 +346,13 @@
   flex: 0.8;
 }
 
+.payment-details > form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
 * {
   margin: 0;
 }
